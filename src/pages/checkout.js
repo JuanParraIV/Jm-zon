@@ -27,9 +27,7 @@ const Checkout = () => {
                 {items.length===0 ? 'Your Amazon basket is empty':'Your Shopping basket'}
               </h1>
 
-              {items && items?.map(()=>(
-                  
-              ))}
+              
           </div>
       </div>
 
