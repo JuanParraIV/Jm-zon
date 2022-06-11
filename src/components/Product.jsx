@@ -33,6 +33,7 @@ const Product = ({
       category,
       image,
       rating,
+      hasPrime,
     }
 
     //SENDING The product("payload")as an action to the redux store -- the basket slice

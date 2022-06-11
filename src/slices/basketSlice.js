@@ -10,9 +10,23 @@ export const basketSlice = createSlice({
   reducers: {
     //ACTION CREATORS
     addToBasket: (state, action) => {
-      state.items =[...state.items,action.payload]
+      state.items = [...state.items, action.payload];
     },
-    removeFromBasket: (state, action) => {},
+    removeFromBasket: (state, action) => {
+      const ItemIndex = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      let newBasket = [...state.items];
+
+      ItemIndex >= 0
+        ? newBasket.splice(ItemIndex, 1)
+        : console.warn(
+            `Cant remove product (id: ${action.payload.id} as its not in basket)`
+          );
+
+      state.items = newBasket;
+    },
   },
 });
 
